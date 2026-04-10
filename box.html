@@ -4,55 +4,35 @@
 <head>
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>layout</title>
+       <title>Responsive Layout</title>
 
        <style>
               body {
                      background-color: lightgrey;
+                     margin: 0;
               }
 
-
               .container {
-
                      display: flex;
-                     justify-content: space-around;
-                     flex-direction: row;
-
-
+                     flex-wrap: wrap;
+                     justify-content: center;
               }
 
               .col {
-                     width: 500px;
-                     height: 600px;
+                     width: 100%;
+                     max-width: 350px;
+                     min-height: 400px;
                      display: flex;
                      flex-direction: column;
                      margin: 10px;
-                     background-color:darkgray;
-
-
+                     background-color: darkgray;
+                     padding: 10px;
               }
 
-              .item {
-                     width: fit-content;
-                     background-color: transparent;
-                     margin: 40px;
-                     margin-top: -6px;
-              }
-
-              .rohit {
-                     width: 500px;
-                     height: 600px;
-                     display: flex;
-                     flex-direction: row;
-                     margin: 10px;
-                     background-color: lightgreen;
-              }
-
-              img {
+              .item img {
                      width: 100%;
-                     gap: 50px;
-                     margin: 2px;
-
+                     margin: 5px 0;
+                     border-radius: 10px;
               }
 
               .my {
@@ -62,39 +42,47 @@
                      align-items: center;
                      flex-direction: column;
                      border-radius: 20px;
-                     height: 200px;
-
+                     padding: 10px;
               }
 
               input {
-                     width: 200px;
-
+                     width: 90%;
                      padding: 10px;
                      margin: 10px;
                      border-radius: 10px;
+                     border: none;
               }
 
-              .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));
-    gap:16px;
-  }
+              .cards {
+                     display: grid;
+                     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                     gap: 10px;
+              }
 
-   .card{
-    min-height:160px;
-    padding:20px;
-    background:#fffdf9;
-    border:1px solid;
-    border-radius:10px;
-    margin: 7px;
-  }
+              .card {
+                     min-height: 100px;
+                     padding: 10px;
+                     background: #fffdf9;
+                     border: 1px solid black;
+                     border-radius: 10px;
+              }
+
+              @media (min-width: 768px) {
+                     .container {
+                            flex-wrap: nowrap;
+                            justify-content: space-around;
+                     }
+
+                     .col {
+                            width: 30%;
+                     }
+              }
        </style>
 </head>
 
 <body>
+
        <div class="container">
-
-
 
               <div class="col">
                      <div>ONE</div>
@@ -104,14 +92,15 @@
                             <img src="pics/banaras.jpg2.jpg">
                      </div>
               </div>
+
               <div class="col">TWO</div>
 
-              <div class="col">THREE
+              <div class="col">
+                     THREE
 
                      <div class="my">
-
-                            <input type=" text" placeholder="My Website">
-                            <input type="text" placeholder="Bookmarks Priview">
+                            <input type="text" placeholder="My Website">
+                            <input type="text" placeholder="Bookmarks Preview">
                      </div>
 
                      <div class="cards">
@@ -121,6 +110,7 @@
                             <div class="card">Card 4</div>
                      </div>
               </div>
+
        </div>
 
 </body>
