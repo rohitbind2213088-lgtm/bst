@@ -1,0 +1,214 @@
+ <div class="row">
+  <div class="item">One</div>
+  <div class="item">Two</div>
+  <div class="item">Three</div>
+</div>
+
+<style>
+  .row{
+    display:flex;
+    gap:12px;
+  }
+
+  .item{
+    padding:20px;
+    background:#fde7c0;
+    border:1px solid #f0d6aa;
+    border-radius:12px;
+    font-weight:bold;
+  }
+</style>
+<div class="box">Header</div>
+<div class="box">Main Content</div>
+<div class="box">Footer</div>
+
+<style>
+  .box{
+    padding:20px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    background:#f0d6aa;
+  }
+</style>
+<div class="toolbar">
+  <div class="item">Logo</div>
+  <div class="item">Menu 1</div>
+  <div class="item">Menu 2</div>
+  <div class="item">Menu 3</div>
+</div>
+
+<style>
+  .toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    padding:16px;
+    border:1px solid #ddd;
+  }
+
+  .item{
+    padding:14px 16px;
+    background: #f0d6aa;
+    border-radius:12px;
+  }
+</style>
+<div class="layout">
+  <aside class="sidebar">Sidebar</aside>
+  <main class="main">Main content goes here.</main>
+</div>
+
+<style>
+  .layout{
+    display:flex;
+    gap:16px;
+  }
+
+  .sidebar{
+    flex:0 0 220px;
+    padding:20px;
+    background:#ead7c4;
+    border-radius:16px;
+  }
+
+  .main{
+    flex:1;
+    padding:20px;
+    background:blueviolet;
+    border-radius:16px;
+  }
+
+  @media (max-width: 800px){
+    .layout{
+      flex-direction:column;
+    }
+
+    .sidebar{
+      flex-basis:auto;
+    }
+  }
+</style>
+<div class="grid">
+  <div class="cell">1</div>
+  <div class="cell">2</div>
+  <div class="cell">3</div>
+  <div class="cell">4</div>
+  <div class="cell">5</div>
+  <div class="cell">6</div>
+   
+</div>
+
+<style>
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:12px;
+  }
+
+  .cell{
+    padding:20px;
+    background:#fff2dd;
+    border-radius:12px;
+    text-align:center;
+    font-weight:bold;
+  }
+</style>
+<div class="cards">
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+  <div class="card">Card 4</div>
+</div>
+
+<style>
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:16px;
+  }
+
+  .card{
+    min-height:120px;
+    padding:20px;
+    background:#fffdf9;
+    border:1px solid #f0d6aa;
+    border-radius:16px;
+  }
+</style>
+<div class="app">
+  <header class="app-header">
+    <div>Logo</div>
+    <nav class="menu">
+      <a href="#">Home</a>
+      <a href="#">Reports</a>
+      <a href="#">Settings</a>
+    </nav>
+  </header>
+
+  <aside class="left">Left Sidebar</aside>
+  <main class="main">Main Content</main>
+  <aside class="right">Right Panel</aside>
+  <footer class="foot">Footer</footer>
+</div>
+
+<style>
+  .app{
+    display:grid;
+    grid-template-columns:220px 1fr 220px;
+    grid-template-areas:
+      "header header header"
+      "left main right"
+      "foot foot foot";
+    gap:16px;
+  }
+
+  .app-header{
+    grid-area:header;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+    padding:18px;
+    background:#fff2dd;
+    border-radius:16px;
+  }
+
+  .menu{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  .left{ grid-area:left; }
+  .main{ grid-area:main; }
+  .right{ grid-area:right; }
+  .foot{ grid-area:foot; }
+
+  .left, .main, .right, .foot{
+    padding:18px;
+    background:#fffdf9;
+    border-radius:16px;
+    border:1px solid #ead7c4;
+  }
+
+  @media (max-width: 900px){
+    .app{
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "header"
+        "left"
+        "main"
+        "right"
+        "foot";
+    }
+
+    .app-header{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+  }
+  
+</style>
+
+

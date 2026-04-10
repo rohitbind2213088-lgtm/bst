@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+
+    <style>
+
+          body{
+                font-family: Arial;
+                background: #f0f2f5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+          }
+
+          .container{
+                      width: 350px;
+                      padding: 20px;
+                      background: #fff;
+                      border: 1px solid #ccc;
+                      
+          }
+            
+          input{
+                   width: 100%;
+                   padding: 8px;
+                   margin: 5px 0;
+
+          }
+
+          .row{
+               display: flex;
+               gap: 5px;
+          }
+
+          button{
+                  width: 100%;
+                  padding: 10px;
+                  margin-top: 10px;
+                  background: green;
+                  color: white;
+                  border: none;
+          }
+
+
+    </style>
+
+</head>
+
+<body>
+
+      <div class="container">
+
+        <h2>Signup</h2>
+
+        <div class="row">
+
+             <input type="text" placeholder="First Name">
+             <input type="text" placeholder="Surname">
+        </div> 
+        
+        <div class="row">
+
+             <input type="text" placeholder="Date">
+             <input type="text" placeholder="Month">
+             <input type="text" placeholder="year">
+
+        </div>
+
+        <div class="row">
+
+          <input type="radio" name="g">Female
+          <input type="radio" name="g">Male
+        </div>
+      
+
+        <input type="text" placeholder="Email or Mobile">
+
+
+        <input type="text" placeholder="Password">
+
+        <button>Sign Up</button>
+        
+       
+
+      </div>
+    
+</body>
+</html>
