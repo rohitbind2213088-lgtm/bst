@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Reverse Text Color with var() and calc()</title>
+
+    <style>
+        :root {
+            --bg-r: 42;
+            --bg-g: 120;
+            --bg-b: 200;
+
+            --reverse-r: calc(255 - var(--bg-r));
+            --reverse-g: calc(255 - var(--bg-g));
+            --reverse-b: calc(255 - var(--bg-b));
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff8ef;
+            color: #371f25;
+            padding: 24px;
+        }
+
+        .card {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 24px;
+            border-radius: 20px;
+            background: rgb(var(--bg-r), var(--bg-g), var(--bg-b));
+            color: rgb(var(--reverse-r), var(--reverse-g), var(--reverse-b));
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Reverse Text Color Demo</h1>
+        <p>
+            The background color is created from RGB variables.
+            The text color is computed using 255 minus each background channel.
+        </p>
+    </div>
+</body>
+
+</html>

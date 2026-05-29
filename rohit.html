@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+      
+      .magnify-lens,
+.magnify-result {
+  display: none;
+  background-repeat: no-repeat;
+}
+magnify-container {
+  position: relative;
+  overflow: hidden;
+}
+
+img{
+     width: 500px;
+     height: 400px;
+     
+
+}
+   </style>
+</head>
+<body>
+    <div class="thumbs">
+  <button data-full="image-1.jpg">
+    <img src="pic/ma.jpg" alt="Thumbnail 1">
+  </button>        
+</div>
+
+<img id="ppMainImg" src="pic/book.jpg" alt="Selected product image">
+<div id="ppLens"></div>
+<div id="ppResult">  
+</div>
+ <script>
+         function setActive(index) {
+  activeIndex = (index + thumbs.length) % thumbs.length;
+  const full = thumbs[activeIndex].dataset.full;
+  img.src = full;
+}
+const scaleX = img.naturalWidth / rect.width;
+const scaleY = img.naturalHeight / rect.height;
+
+const natX = x * scaleX;
+const natY = y * scaleY;
+
+const bgPosX = -(natX * zoom);
+const bgPosY = -(natY * zoom);
+<button data-full="https://example.com/product.jpg">
+  <img src="https://example.com/product.jpg"alt="Product thumbnail">
+</button>
+x = Math.max(0, Math.min(x, rect.width - lensW));
+y = Math.max(0, Math.min(y, rect.height - lensH));
+const rect = img.getBoundingClientRect();
+const cx = e.clientX - rect.left;
+const cy = e.clientY - rect.top;
+ </script>
+ 
+
+
+
+    
+</body>
+</html>

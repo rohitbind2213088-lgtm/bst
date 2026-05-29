@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image magnifier</title>
+
+    <style>
+        .supercontainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .simpleimage {
+            width: 200px;
+
+        }
+
+        .magnifiedimage {
+            width: 400px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="supercontainer">
+        <div class="container">
+            <img onmousemove="getpicture(event)" class="simpleimage" src="pic/ma.jpg">
+            <img onmousemove="getpicture(event)" src="pic/sp.jpg" class="simpleimage">
+        </div>
+
+        <div class="container">
+            <img id="magnifiedimag" class="magnifiedimage" src="pic/ma.jpg">
+
+        </div>
+    </div>
+    <script>
+
+        function getpicture(evt) {
+            // console.log(evt.target.src);
+            const x = evt.clientX;
+            const y = evt.clientY;
+            console.log(x, y);
+            magnifiedimag.src = evt.target.src;
+        }
+    </script>
+</body>
+
+</html>

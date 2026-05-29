@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -8,174 +7,168 @@
   <meta name="description" content="A beginner shopping cart app built using HTML, CSS, and JavaScript." />
 
   <style>
-    :root {
-      --bg: #fff8ef;
-      --panel: #ffffff;
-      --soft: #fff3df;
-      --ink: #1f2937;
-      --muted: #6b7280;
-      --brand: #d97706;
-      --brand-dark: #b45309;
-      --line: #ead7c4;
-      --shadow: 0 10px 28px rgba(0, 0, 0, .08);
+    :root{
+      --bg:#fff8ef;
+      --panel:#ffffff;
+      --soft:#fff3df;
+      --ink:#1f2937;
+      --muted:#6b7280;
+      --brand:#d97706;
+      --brand-dark:#b45309;
+      --line:#ead7c4;
+      --shadow:0 10px 28px rgba(0,0,0,.08);
     }
 
-    * {
-      box-sizing: border-box
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
+    .container{
+      width:min(1100px, calc(100% - 32px));
+      margin:0 auto;
     }
 
-    .container {
-      width: min(1100px, calc(100% - 32px));
-      margin: 0 auto;
+    h1,h2,h3,p{
+      margin-top:0;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
+    .site-header{
+      padding:24px 0;
+      border-bottom:1px solid var(--line);
+      background:#fffaf2;
     }
 
-    .site-header {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--line);
-      background: #fffaf2;
+    .site-header h1{
+      margin-bottom:6px;
     }
 
-    .site-header h1 {
-      margin-bottom: 6px;
+    .site-header p{
+      color:var(--muted);
+      margin-bottom:0;
     }
 
-    .site-header p {
-      color: var(--muted);
-      margin-bottom: 0;
+    .layout{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:20px;
+      padding:24px 0 40px;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-      padding: 24px 0 40px;
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:var(--shadow);
     }
 
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: var(--shadow);
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
     }
 
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+    .product-card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      background:#fffdf9;
     }
 
-    .product-card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
-      background: #fffdf9;
+    .product-image{
+      height:120px;
+      border-radius:14px;
+      margin-bottom:12px;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      color:#92400e;
+      background:linear-gradient(135deg,#fde7c0,#fff1dd);
     }
 
-    .product-image {
-      height: 120px;
-      border-radius: 14px;
-      margin-bottom: 12px;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      color: #92400e;
-      background: linear-gradient(135deg, #fde7c0, #fff1dd);
+    .price{
+      color:var(--brand);
+      font-weight:900;
+      margin:8px 0 12px;
     }
 
-    .price {
-      color: var(--brand);
-      font-weight: 900;
-      margin: 8px 0 12px;
+    .btn{
+      border:none;
+      background:var(--brand);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:800;
+      transition:transform .2s ease, background .2s ease;
     }
 
-    .btn {
-      border: none;
-      background: var(--brand);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 800;
-      transition: transform .2s ease, background .2s ease;
+    .btn:hover{
+      transform:translateY(-2px);
+      background:var(--brand-dark);
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      background: var(--brand-dark);
+    .cart-row{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      margin-bottom:12px;
+      background:#fffdf9;
     }
 
-    .cart-row {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px;
-      margin-bottom: 12px;
-      background: #fffdf9;
+    .cart-row-title{
+      font-weight:800;
+      margin-bottom:4px;
     }
 
-    .cart-row-title {
-      font-weight: 800;
-      margin-bottom: 4px;
+    .cart-row-meta{
+      color:var(--muted);
+      margin-bottom:10px;
     }
 
-    .cart-row-meta {
-      color: var(--muted);
-      margin-bottom: 10px;
+    .cart-actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
     }
 
-    .cart-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+    .cart-actions button{
+      border:none;
+      background:#f3e5d0;
+      color:#7c2d12;
+      padding:8px 10px;
+      border-radius:10px;
+      font-weight:800;
+      cursor:pointer;
     }
 
-    .cart-actions button {
-      border: none;
-      background: #f3e5d0;
-      color: #7c2d12;
-      padding: 8px 10px;
-      border-radius: 10px;
-      font-weight: 800;
-      cursor: pointer;
+    .summary-box{
+      margin-top:16px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
     }
 
-    .summary-box {
-      margin-top: 16px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
+    .empty{
+      color:var(--muted);
     }
 
-    .empty {
-      color: var(--muted);
-    }
-
-    @media (max-width: 850px) {
-      .layout {
-        grid-template-columns: 1fr;
+    @media (max-width: 850px){
+      .layout{
+        grid-template-columns:1fr;
       }
 
-      .products-grid {
-        grid-template-columns: 1fr;
+      .products-grid{
+        grid-template-columns:1fr;
       }
     }
   </style>
 </head>
-
 <body>
   <header class="site-header">
     <div class="container">
@@ -312,8 +305,6 @@
 
     renderProducts();
     renderCart();
-
   </script>
 </body>
-
 </html>
